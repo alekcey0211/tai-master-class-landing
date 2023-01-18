@@ -60,18 +60,27 @@ export default {
       },
       colors: {
         red: "#B62E1F",
+        fiolet: "#DCD9FF",
+        blue: "#005CC3",
+        "gray-1": "#333333",
+        "gray-2": "#4F4F4F",
+        "gray-6": "#F2F2F2",
+      },
+      screens: {
+        "2xl": "1440px",
       },
     },
     container: (theme) => {
       return {
         center: true,
-        padding: {
-          ...theme("padding"),
-          sm: "2rem",
-          lg: "40px",
-          xl: "40px",
-          "2xl": "40px",
-        },
+        padding: "0"
+        // padding: {
+        //   ...theme("padding"),
+        //   sm: "2rem",
+        //   lg: "40px",
+        //   xl: "40px",
+        //   "2xl": "40px",
+        // },
       };
     },
   },
