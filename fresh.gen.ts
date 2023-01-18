@@ -4,16 +4,14 @@
 
 import config from "./deno.json" assert { type: "json" };
 import * as $0 from "./routes/index.tsx";
-import * as $$0 from "./islands/AutoScrollImage.tsx";
-import * as $$1 from "./islands/ScrollToTop.tsx";
+import * as $$0 from "./islands/ScrollToTop.tsx";
 
 const manifest = {
   routes: {
     "./routes/index.tsx": $0,
   },
   islands: {
-    "./islands/AutoScrollImage.tsx": $$0,
-    "./islands/ScrollToTop.tsx": $$1,
+    "./islands/ScrollToTop.tsx": $$0,
   },
   baseUrl: import.meta.url,
   config,
