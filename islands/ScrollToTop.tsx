@@ -28,11 +28,11 @@ export default function ScrollToTop() {
   }, []);
 
   return (
-    <div class={`fixed bottom-8 right-8 ${!isVisible && "hidden"}`}>
+    <div class={`fixed z-50 bottom-8 right-8 ${!isVisible && "hidden"}`}>
       <button
         type="button"
         onClick={scrollToTop}
-        class="inline-flex items-center bg-red bg-opacity-80 hover:bg-opacity-90 active:bg-opacity-95 rounded-full p-3 text-white shadow-sm"
+        class="inline-flex items-center bg-blue bg-opacity-80 hover:bg-opacity-90 active:bg-opacity-95 rounded-full p-3 text-white shadow-sm"
         {...{
           "aria-label": "scroll to top",
         }}

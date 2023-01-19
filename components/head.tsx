@@ -20,7 +20,7 @@ export function HeadElement({
         name="viewport"
         content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
       /> */}
-      <meta name="viewport" content="width=1440" />
+      <meta name="viewport" content="width=1280" />
 
       {/* Facebook Meta Tags */}
       <meta property="og:url" content={url.href} />
@@ -41,6 +41,7 @@ export function HeadElement({
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
       <link rel="stylesheet" href="photoswipe/photoswipe.css" />
+      <link rel="stylesheet" href="/swiper/swiper-bundle.min.css" />
       <script type="module" src="app.js" />
     </Head>
   );

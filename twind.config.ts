@@ -3,7 +3,46 @@ import { Configuration } from "twind";
 export default {
   plugins: {
     gallery: {},
+    "pswp-gallery": {},
     "gallery-open": {},
+    swiper: {},
+    "swiper-wrapper": {},
+    "swiper-slide": {},
+    "swiper-pagination": {},
+    "swiper-button-next": {},
+    "swiper-button-prev": {},
+    "visually-hidden": {
+      border: "0",
+      clip: "rect(0 0 0 0)",
+      "clip-path": "inset(50%)",
+      height: "1px",
+      margin: "-1px",
+      overflow: "hidden",
+      padding: "0",
+      position: "absolute",
+      width: "1px",
+      "white-space": "nowrap",
+      "&.focusable:active": {
+        clip: "auto",
+        "clip-path": "none",
+        height: "auto",
+        margin: "0",
+        overflow: "visible",
+        position: "static",
+        width: "auto",
+        "white-space": "inherit",
+      },
+      "&.focusable:focus": {
+        clip: "auto",
+        "clip-path": "none",
+        height: "auto",
+        margin: "0",
+        overflow: "visible",
+        position: "static",
+        width: "auto",
+        "white-space": "inherit",
+      },
+    },
     "aspect-auto": {
       "aspect-ratio": `auto`,
     },
@@ -64,6 +103,7 @@ export default {
         blue: "#005CC3",
         "gray-1": "#333333",
         "gray-2": "#4F4F4F",
+        "gray-5": "#E0E0E0",
         "gray-6": "#F2F2F2",
       },
       screens: {
@@ -73,7 +113,7 @@ export default {
     container: (theme) => {
       return {
         center: true,
-        padding: "0"
+        padding: "0",
         // padding: {
         //   ...theme("padding"),
         //   sm: "2rem",
