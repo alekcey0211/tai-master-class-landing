@@ -166,7 +166,7 @@ export default function Home(ctx: PageProps) {
           <h2 class="uppercase text-blue text-2xl font-light mb-16">
             Мастер классы
           </h2>
-          <div class="grid grid-cols-2 gap-14">
+          <div class="grid grid-cols-2 gap-4 lg:gap-14">
             <div class="bg-fiolet relative pt-[127px] pb-[111px] px-4 md:px-12 isolate">
               <div class="grid gap-y-1 items-end content-end justify-start pb-6 pl-10 bg-white absolute w-[187px] h-[166px] rounded-[100%] -top-[69px] -right-[20px] text-gray-2 font-light text-xl text-center">
                 <span>Для детей</span>
