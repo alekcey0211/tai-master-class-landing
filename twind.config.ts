@@ -43,6 +43,9 @@ export default {
         "white-space": "inherit",
       },
     },
+    "list-lightning": {
+      "list-style-image": `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='16' viewBox='0 0 22 24' fill='none'%3E%3Cpath fill='%23005CC3' d='M12.6 3c0-.2-.1-.4-.3-.5l-.5.1-1.6 1.7a35.4 35.4 0 0 0-6.1 9c0 .3.2.5.5.5h3.9V21c0 .2.1.4.3.5l.5-.1.7-.8c2.5-2.5 4.7-5.5 6.4-8.7l.4-1v-.4c0-.2-.2-.3-.4-.3h-3.8V3Z'/%3E%3C/svg%3E");`,
+    },
     "aspect-auto": {
       "aspect-ratio": `auto`,
     },

@@ -68,12 +68,12 @@ export default function Home(ctx: PageProps) {
                 по художественной композиции из овощей и фруктов
               </span>
             </div>
-            <button
-              type="button"
+            <a
+              href="#form"
               class="text-2xl bg-blue grid place-content-center h-[67px] w-[228px] text-white font-light"
             >
               Записаться
-            </button>
+            </a>
           </div>
         </div>
       </section>
@@ -122,11 +122,11 @@ export default function Home(ctx: PageProps) {
             <div class="container absolute top-1/2 left-1/2 -translate-x-1/2 z-10">
               <div
                 id="swiper-71e5983e0ce24d2aa0a941ba82f4c3f3-button-prev"
-                class="swiper-button-prev text-blue !left-32 !after::text-base !after::sm:text-2xl !after::md:text-4xl !mt-0 !w-auto"
+                class="swiper-button-prev text-blue !xl:left-32 !after::text-base !after::sm:text-2xl !after::md:text-4xl !mt-0 !w-auto"
               />
               <div
                 id="swiper-71e5983e0ce24d2aa0a941ba82f4c3f3-button-next"
-                class="swiper-button-next text-blue !right-32 !after::text-base !after::sm:text-2xl !after::md:text-4xl !mt-0 !w-auto"
+                class="swiper-button-next text-blue !xl:right-32 !after::text-base !after::sm:text-2xl !after::md:text-4xl !mt-0 !w-auto"
               />
             </div>
           </div>
@@ -135,25 +135,7 @@ export default function Home(ctx: PageProps) {
       <section id="about" class="py-16 overflow-hidden h-[903px]">
         <div class="relative container">
           <div class="absolute left-4 xl:left-40 2xl:left-[172px] -top-[33px] bg-fiolet bg-opacity-50 w-[1400px] h-[853px] rounded-[100%] -z-20" />
-          <div class="absolute left-16 xl:left-52 2xl:left-[219px] top-[21px] bg-white w-[1085px] h-[640px] rounded-[100%] -z-10">
-            {/* <div class="grid gap-y-6 text-2xl font-light text-gray-2 pl-24">
-              <span>
-                Меня зовут Таисия.
-                <br />
-                Я повар и карвер уже 10лет. <br />
-                Я декорирую художественной резкой блюда и композиции <br />
-                из овощей и фруктов.
-              </span>
-              <span>
-                Моя работа - творчество, которое никого не оставит равнодушным.
-                Процесс вырезания и составления композиций очень увлекательный
-                для взрослых и детей.
-              </span>
-              <span>
-                Буду рада помочь Вам сделать первые шаги в искусстве карвинга.
-              </span>
-            </div> */}
-          </div>
+          <div class="absolute left-16 xl:left-52 2xl:left-[219px] top-[21px] bg-white w-[1085px] h-[640px] rounded-[100%] -z-10" />
         </div>
         <div class="container mb-[143px]">
           <h2 class="uppercase text-blue text-2xl font-light xl:ml-32">
@@ -201,7 +183,7 @@ export default function Home(ctx: PageProps) {
               <p class="text-xl font-light mb-4">
                 На нашем мастер-классе участники:
               </p>
-              <ul class="grid gap-4 list-circle pl-5 font-light text-lg mb-8 ">
+              <ul class="grid gap-4 list-circle pl-5 font-light text-lg leading-[24px] mb-8 list-lightning">
                 <li>научатся составлять композицию из фруктов,</li>
                 <li>
                   узнают, какие фрукты лучше сочетать по вкусу во фруктовой
@@ -250,7 +232,7 @@ export default function Home(ctx: PageProps) {
               <p class="text-xl font-light mb-4">
                 На нашем мастер-классе участники:
               </p>
-              <ul class="grid gap-4 list-circle pl-5 font-light text-lg mb-8 ">
+              <ul class="grid gap-4 list-circle pl-5 font-light text-lg mb-8 list-lightning">
                 <li>
                   сделают первые шаги в карвинге - искусстве художественной
                   резки по овощам и фруктам
