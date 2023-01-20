@@ -104,6 +104,7 @@ export default {
         red: "#B62E1F",
         fiolet: "#DCD9FF",
         blue: "#005CC3",
+        "blue-2": "#44566F",
         "gray-1": "#333333",
         "gray-2": "#4F4F4F",
         "gray-5": "#E0E0E0",

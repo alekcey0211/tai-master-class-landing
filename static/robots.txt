@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /db
+
+Host: https://alekcey0211-tai-master.deno.dev
+Sitemap: https://alekcey0211-tai-master.deno.dev/sitemap.xml

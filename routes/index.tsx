@@ -5,6 +5,7 @@ import ScrollToTop from "../islands/ScrollToTop.tsx";
 import { HeadElement } from "../components/head.tsx";
 import { Image } from "../components/image.tsx";
 import { icons } from "../components/icons.tsx";
+import RequestForm from "../islands/RequestForm.tsx";
 
 export default function Home(ctx: PageProps) {
   const { url } = ctx;
@@ -136,37 +137,37 @@ export default function Home(ctx: PageProps) {
         <div class="relative container">
           <div class="absolute left-4 xl:left-40 2xl:left-[172px] -top-[33px] bg-fiolet bg-opacity-50 w-[1400px] h-[853px] rounded-[100%] -z-20" />
           <div class="absolute left-16 xl:left-52 2xl:left-[219px] top-[21px] bg-white w-[1085px] h-[640px] rounded-[100%] -z-10" />
+          <div class="max-w-[750px] absolute left-60 xl:left-[340px] right-0 top-[341px] -translate-y-1/2 grid gap-y-6 text-2xl font-light text-gray-2">
+            <span>
+              Меня зовут Таисия.
+              <br />
+              Я повар и карвер уже 10лет. <br />
+              Я декорирую художественной резкой блюда и композиции <br />
+              из овощей и фруктов.
+            </span>
+            <span>
+              Моя работа - творчество, которое никого не оставит равнодушным.
+              Процесс вырезания и составления композиций очень увлекательный для
+              взрослых и детей.
+            </span>
+            <span>
+              Буду рада помочь Вам сделать первые шаги в искусстве карвинга.
+            </span>
+          </div>
         </div>
         <div class="container mb-[143px]">
           <h2 class="uppercase text-blue text-2xl font-light xl:ml-32">
             Обо мне
           </h2>
         </div>
-        <div class="mx-auto max-w-[750px] pl-10 grid gap-y-6 text-2xl font-light text-gray-2">
-          <span>
-            Меня зовут Таисия.
-            <br />
-            Я повар и карвер уже 10лет. <br />
-            Я декорирую художественной резкой блюда и композиции <br />
-            из овощей и фруктов.
-          </span>
-          <span>
-            Моя работа - творчество, которое никого не оставит равнодушным.
-            Процесс вырезания и составления композиций очень увлекательный для
-            взрослых и детей.
-          </span>
-          <span>
-            Буду рада помочь Вам сделать первые шаги в искусстве карвинга.
-          </span>
-        </div>
       </section>
-      <section id="master-classes" class="py-16">
+      <section id="master-classes" class="py-16 overflow-hidden">
         <div class="container !xl:px-32">
           <h2 class="uppercase text-blue text-2xl font-light mb-16">
             Мастер классы
           </h2>
           <div class="grid grid-cols-2 gap-14">
-            <div class="bg-fiolet relative pt-[127px] pb-[111px] px-12">
+            <div class="bg-fiolet relative pt-[127px] pb-[111px] px-4 md:px-12 isolate">
               <div class="grid gap-y-1 items-end content-end justify-start pb-6 pl-10 bg-white absolute w-[187px] h-[166px] rounded-[100%] -top-[69px] -right-[20px] text-gray-2 font-light text-xl text-center">
                 <span>Для детей</span>
                 <span>8-12 лет</span>
@@ -175,7 +176,7 @@ export default function Home(ctx: PageProps) {
                 src="/image/3a62e09c31a44e0392c02b96f2c3d86c.png"
                 width={300}
                 height={300}
-                className="absolute -bottom-[26px] -left-[156px]"
+                className="absolute -bottom-[26px] -left-[156px] -z-10"
               />
               <h3 class="text-blue text-[22px] leading-[30px] text-center mb-12">
                 Мастер-класс «Фруктовая композиция»
@@ -215,7 +216,7 @@ export default function Home(ctx: PageProps) {
                 Записаться
               </a>
             </div>
-            <div class="flex flex-col bg-gray-5 relative pt-[127px] pb-[111px] px-12">
+            <div class="flex flex-col bg-gray-5 relative pt-[127px] pb-[111px] px-4 md:px-12 isolate">
               <div class="grid gap-y-1 items-end content-end justify-start pb-6 pl-6 bg-white absolute w-[187px] h-[166px] rounded-[100%] -top-[69px] -right-[20px] text-gray-2 font-light text-xl text-center">
                 <span>Для взрослых</span>
                 <span>от 18 лет</span>
@@ -224,7 +225,7 @@ export default function Home(ctx: PageProps) {
                 src="/image/fbcef8b55cc54827aa92d7fd5af1b277.png"
                 width={250}
                 height={250}
-                className="absolute -bottom-[26px] -right-[106px]"
+                className="absolute -bottom-[26px] -right-[106px] -z-10"
               />
               <h3 class="text-blue text-[22px] leading-[30px] text-center mb-12">
                 Мастер-класс «Яблочко наливное»
@@ -257,7 +258,7 @@ export default function Home(ctx: PageProps) {
               <p class="text-lg mb-20">Участие в мастер-классе БЕСПЛАТНОЕ</p>
               <a
                 href="#form"
-                class="text-2xl bg-blue grid place-content-center h-[60px] w-[200px] text-white font-light mx-auto z-10"
+                class="text-2xl bg-blue grid place-content-center h-[60px] w-[200px] text-white font-light mx-auto"
               >
                 Записаться
               </a>
@@ -267,8 +268,11 @@ export default function Home(ctx: PageProps) {
       </section>
       <section id="form" class="py-16 overflow-hidden h-[903px]">
         <div class="relative container">
-          <div class="absolute left-[172px] -top-[33px] bg-fiolet bg-opacity-50 w-[1400px] h-[853px] rounded-[100%] -z-20" />
-          <div class="absolute left-[219px] top-[21px] bg-white w-[1085px] h-[640px] rounded-[100%] -z-10" />
+          <div class="absolute left-4 xl:left-40 2xl:left-[172px] -top-[33px] bg-fiolet bg-opacity-50 w-[1400px] h-[853px] rounded-[100%] -z-20" />
+          <div class="absolute left-16 xl:left-52 2xl:left-[219px] top-[21px] bg-white w-[1085px] h-[640px] rounded-[100%] -z-10" />
+          <div class="flex justify-center max-w-[750px] absolute left-60 xl:left-[340px] right-0 top-[341px] -translate-y-1/2 grid gap-y-6 text-2xl font-light text-gray-2">
+            <RequestForm />
+          </div>
         </div>
       </section>
       <footer id="contacts" class="bg-gray-6 pt-16 pb-52">
