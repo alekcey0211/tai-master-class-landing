@@ -1,5 +1,5 @@
 import { HandlerContext } from "$fresh/server.ts";
-import { getJson, setJson } from "../../shared/file.ts";
+import { getJson } from "../../shared/file.ts";
 
 type DbRequest = {
   firstName: string;
@@ -15,8 +15,6 @@ export const handler = async (_req: Request, _ctx: HandlerContext) => {
 
     const newRequest = (await _req.json()) as DbRequest;
     const data = (await getJson(requestsPath)) as DbRequest[];
-
-    await setJson(requestsPath, JSON.stringify([...data, newRequest], null, 2));
 
     return new Response(null, {
       status: 200,
