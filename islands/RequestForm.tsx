@@ -2,26 +2,35 @@ import { useState } from "preact/hooks";
 
 export default function RequestForm() {
   const [agree, setAgree] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   return (
     <form
       class="max-w-[700px]"
       onSubmit={async (e) => {
-        e.preventDefault();
-        if (!agree) return;
-        const form = e.currentTarget;
-        const fd = new FormData(form);
-        const entries = [...fd.entries()];
-        const json = entries.reduce((acc, curr) => {
-          return { ...acc, [curr[0]]: curr[1] };
-        }, {});
-        const r = await fetch("/api/request", {
-          method: "POST",
-          body: JSON.stringify(json),
-        });
-        if (r.status === 200) {
-          form.reset();
+        try {
+          e.preventDefault();
+          if (!agree) return;
+          setLoading(true);
+          const form = e.currentTarget;
+          const fd = new FormData(form);
+          const entries = [...fd.entries()];
+          const json = entries.reduce((acc, curr) => {
+            return { ...acc, [curr[0]]: curr[1] };
+          }, {});
+          const r = await fetch("/api/request", {
+            method: "POST",
+            body: JSON.stringify(json),
+          });
+          if (r.status === 200) {
+            setSuccess(true);
+            form.reset();
+          }
+        } catch (error) {
+          console.error(error);
         }
+        setLoading(false);
       }}
     >
       <h2 class="mb-10 text-2xl text-blue text-center">
@@ -104,10 +113,10 @@ export default function RequestForm() {
       </div>
       <button
         type="submit"
-        disabled={!agree}
+        disabled={!agree || loading}
         class="text-2xl bg-blue grid place-content-center h-[60px] w-[200px] text-white font-light mx-auto disabled:bg-opacity-50"
       >
-        Записаться
+        {loading ? "Отправка..." : "Записаться"}
       </button>
     </form>
   );
