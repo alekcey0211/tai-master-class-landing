@@ -32,6 +32,70 @@ export default function Home(ctx: PageProps) {
       height: 464,
     },
   ];
+  const galleryChild = [
+    {
+      href: "/image/8654802de29141e09329ed6440c91f24.jpg",
+      src: {
+        href: "/image/8654802de29141e09329ed6440c91f24-src.jpg",
+        width: 820,
+        height: 812,
+      },
+      width: 410,
+      height: 406,
+    },
+    {
+      href: "/image/cc58c3265c6a4e2cb47d2bd0339f3a65.jpg",
+      src: {
+        href: "/image/cc58c3265c6a4e2cb47d2bd0339f3a65-src.jpg",
+        width: 1038,
+        height: 812,
+      },
+      width: 519,
+      height: 406,
+    },
+    {
+      href: "/image/ed49b23f6aa04f91ad14e0d8e7cfceba.jpg",
+      src: {
+        href: "/image/ed49b23f6aa04f91ad14e0d8e7cfceba-src.jpg",
+        width: 768,
+        height: 812,
+      },
+      width: 384,
+      height: 406,
+    },
+  ];
+  const galleryAdult = [
+    {
+      href: "/image/4ba44bf245df4857af2da952733a643c.jpg",
+      src: {
+        href: "/image/4ba44bf245df4857af2da952733a643c-src.jpg",
+        width: 816,
+        height: 812,
+      },
+      width: 408,
+      height: 406,
+    },
+    {
+      href: "/image/640429f4aabf4571afa72052714d709b.jpg",
+      src: {
+        href: "/image/640429f4aabf4571afa72052714d709b-src.jpg",
+        width: 1038,
+        height: 810,
+      },
+      width: 519,
+      height: 405,
+    },
+    {
+      href: "/image/dc5255db681f410a8f20d4969891dd50.jpg",
+      src: {
+        href: "/image/dc5255db681f410a8f20d4969891dd50-src.jpg",
+        width: 768,
+        height: 812,
+      },
+      width: 384,
+      height: 406,
+    },
+  ];
 
   return (
     <>
@@ -266,11 +330,67 @@ export default function Home(ctx: PageProps) {
           </div>
         </div>
       </section>
+      <section class="bg-gray-6 pt-20 pb-12">
+        <div class="container">
+          <h2 class="uppercase text-blue text-2xl font-light mb-16 xl:ml-32">
+            Мастер класс для детей
+          </h2>
+          <div
+            id="gallery-c2e785305bb14c718691a9c265b65581"
+            class="flex flex-wrap justify-around gap-10 mb-16"
+          >
+            {galleryChild.map((image) => (
+              <a
+                href={image.src.href}
+                data-pswp-width={image.src.width}
+                data-pswp-height={image.src.height}
+                target="_blank"
+                {...{ "aria-label": "open image in fullscreen view" }}
+                class="h-[406px]"
+              >
+                <Image
+                  src={image.href}
+                  width={image.width}
+                  height={image.height}
+                  className="block object-cover w-full h-full"
+                  isLazy={false}
+                />
+              </a>
+            ))}
+          </div>
+          <h2 class="uppercase text-blue text-2xl font-light mb-16 xl:ml-32">
+            Мастер класс для взрослых
+          </h2>
+          <div
+            id="gallery-9137448b7acb4cb7bbfddfe1e1965226"
+            class="flex flex-wrap justify-around gap-10 mb-16"
+          >
+            {galleryAdult.map((image) => (
+              <a
+                href={image.src.href}
+                data-pswp-width={image.src.width}
+                data-pswp-height={image.src.height}
+                target="_blank"
+                {...{ "aria-label": "open image in fullscreen view" }}
+                class="h-[406px]"
+              >
+                <Image
+                  src={image.href}
+                  width={image.width}
+                  height={image.height}
+                  className="block object-cover w-full h-full"
+                  isLazy={false}
+                />
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
       <section id="form" class="py-16 overflow-hidden h-[903px]">
         <div class="relative container">
           <div class="absolute left-4 xl:left-40 2xl:left-[172px] -top-[33px] bg-fiolet bg-opacity-50 w-[1400px] h-[853px] rounded-[100%] -z-20" />
           <div class="absolute left-16 xl:left-52 2xl:left-[219px] top-[21px] bg-white w-[1085px] h-[640px] rounded-[100%] -z-10" />
-          <div class="flex justify-center max-w-[750px] absolute left-60 xl:left-[340px] right-0 top-[341px] -translate-y-1/2 grid gap-y-6 text-2xl font-light text-gray-2">
+          <div class="flex justify-center absolute left-60 xl:left-[219px] right-0 top-[341px] -translate-y-1/2">
             <RequestForm />
           </div>
         </div>
