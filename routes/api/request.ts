@@ -14,34 +14,19 @@ type DbRequest = {
 export const handler = async (_req: Request, _ctx: HandlerContext) => {
   try {
     const newRequest = (await _req.json()) as DbRequest;
-    const {
-      type,
-      project_id,
-      private_key_id,
-      private_key,
-      client_email,
-      client_id,
-      auth_uri,
-      token_uri,
-      auth_provider_x509_cert_url,
-      client_x509_cert_url,
-    } = Deno.env.toObject();
 
-    const googleKeys = {
-      type,
-      project_id,
-      private_key_id,
-      private_key,
-      client_email,
-      client_id,
-      auth_uri,
-      token_uri,
-      auth_provider_x509_cert_url,
-      client_x509_cert_url,
-    };
+    const { private_key } = await getJson("key.json");
+
     const spreadSheetId = "1DSI7mx-L5pEVEejqPyY2Ui8QPl-J6uoIQQQtSaec2u4";
     const auth = new google.GoogleAuth();
-    const client = auth.fromJSON(googleKeys);
+    const client = auth.fromJSON({
+      type: Deno.env.get("type"),
+      project_id: Deno.env.get("project_id"),
+      private_key_id: Deno.env.get("private_key_id"),
+      private_key,
+      client_email: Deno.env.get("client_email"),
+      client_id: Deno.env.get("client_id"),
+    });
     const sheets = new google.Sheets(client);
     await sheets.spreadsheetsValuesAppend(
       "Заявки!A:F",
