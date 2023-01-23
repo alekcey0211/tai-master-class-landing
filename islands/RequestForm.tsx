@@ -57,7 +57,6 @@ export default function RequestForm() {
         <div class="grid gap-2 pl-[108px]">
           <label class="flex gap-2 items-center">
             <input
-              checked
               type="radio"
               value="Мастер-класс «Яблочко наливное»"
               name="type"
