@@ -1,6 +1,7 @@
 import { HandlerContext } from "$fresh/server.ts";
 import * as google from "https://googleapis.deno.dev/v1/sheets:v4.ts";
 import { getJson } from "../../shared/file.ts";
+import "https://deno.land/x/dotenv@v3.2.0/load.ts";
 
 type DbRequest = {
   firstName: string;
@@ -13,8 +14,31 @@ type DbRequest = {
 export const handler = async (_req: Request, _ctx: HandlerContext) => {
   try {
     const newRequest = (await _req.json()) as DbRequest;
+    const {
+      type,
+      project_id,
+      private_key_id,
+      private_key,
+      client_email,
+      client_id,
+      auth_uri,
+      token_uri,
+      auth_provider_x509_cert_url,
+      client_x509_cert_url,
+    } = Deno.env.toObject();
 
-    const googleKeys = await getJson("tai-ms-db-610c215eb4cf.json");
+    const googleKeys = {
+      type,
+      project_id,
+      private_key_id,
+      private_key,
+      client_email,
+      client_id,
+      auth_uri,
+      token_uri,
+      auth_provider_x509_cert_url,
+      client_x509_cert_url,
+    };
     const spreadSheetId = "1DSI7mx-L5pEVEejqPyY2Ui8QPl-J6uoIQQQtSaec2u4";
     const auth = new google.GoogleAuth();
     const client = auth.fromJSON(googleKeys);
