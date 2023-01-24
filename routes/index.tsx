@@ -44,67 +44,67 @@ export default function Home(ctx: PageProps) {
   ];
   const galleryChild = [
     {
-      href: "/image/8654802de29141e09329ed6440c91f24.jpg",
+      href: "/image/4dfbd25ef372bef7d28bfca2a8603818.jpg",
       src: {
-        href: "/image/8654802de29141e09329ed6440c91f24-src.jpg",
-        width: 820,
-        height: 812,
+        href: "/image/4dfbd25ef372bef7d28bfca2a8603818-src.jpg",
+        width: 854,
+        height: 808,
       },
-      width: 410,
-      height: 406,
+      width: 427,
+      height: 404,
     },
     {
-      href: "/image/cc58c3265c6a4e2cb47d2bd0339f3a65.jpg",
+      href: "/image/83c3ceba15bbdad00d83de3076c972c3.jpg",
       src: {
-        href: "/image/cc58c3265c6a4e2cb47d2bd0339f3a65-src.jpg",
-        width: 1038,
-        height: 812,
+        href: "/image/83c3ceba15bbdad00d83de3076c972c3-src.jpg",
+        width: 1050,
+        height: 808,
       },
-      width: 519,
-      height: 406,
+      width: 525,
+      height: 404,
     },
     {
-      href: "/image/ed49b23f6aa04f91ad14e0d8e7cfceba.jpg",
+      href: "/image/32f3b31745aba12fa7910df3448c82e8.jpg",
       src: {
-        href: "/image/ed49b23f6aa04f91ad14e0d8e7cfceba-src.jpg",
-        width: 768,
-        height: 812,
+        href: "/image/32f3b31745aba12fa7910df3448c82e8-src.jpg",
+        width: 774,
+        height: 808,
       },
-      width: 384,
-      height: 406,
+      width: 387,
+      height: 404,
     },
   ];
   const galleryAdult = [
     {
-      href: "/image/640429f4aabf4571afa72052714d709b.jpg",
+      href: "/image/62125e0f0bcac6b16bc941526c5f4842.jpg",
       src: {
-        href: "/image/640429f4aabf4571afa72052714d709b-src.jpg",
-        width: 1038,
-        height: 810,
+        href: "/image/62125e0f0bcac6b16bc941526c5f4842-src.jpg",
+        width: 810,
+        height: 660,
       },
-      width: 519,
-      height: 405,
+      width: 460,
+      height: 406,
     },
     {
-      href: "/image/4ba44bf245df4857af2da952733a643c.jpg",
+      href: "/image/e1b4df5a758709c0a9e137184a27c530.jpg",
       src: {
-        href: "/image/4ba44bf245df4857af2da952733a643c-src.jpg",
-        width: 816,
-        height: 812,
+        href: "/image/e1b4df5a758709c0a9e137184a27c530-src.jpg",
+        width: 810,
+        height: 808,
       },
-      width: 408,
-      height: 406,
+      width: 405,
+      height: 404,
     },
 
     {
-      href: "/image/d300297c85dbee2e8408da11687b54d5.jpg",
+      href: "/image/4fab9ef3073d27c43ed9f56beed2fea3.jpg",
       src: {
-        href: "/image/d300297c85dbee2e8408da11687b54d5-src.jpg",
-        width: 2016,
-        height: 1512,
+        href: "/image/4fab9ef3073d27c43ed9f56beed2fea3-src.jpg",
+        width: 810,
+        height: 695,
       },
-      width: 1008,
-      height: 756,
+      width: 455,
+      height: 405,
     },
   ];
 
@@ -239,10 +239,8 @@ export default function Home(ctx: PageProps) {
               src={"/image/231b23c912ebffe1e421135ad7e6373b.png"}
               width={721}
               height={961}
-              className="block absolute 
-              w-[300px] bottom-0 right-0 translate-y-full
-              lg:w-[600px] lg:bottom-auto lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-full lg:right-0
-              "
+              showBreakpoint="lg"
+              className="block absolute w-[600px] bottom-auto top-1/2 -translate-y-1/2 translate-x-full right-0"
             />
           </div>
         </div>
@@ -257,7 +255,7 @@ export default function Home(ctx: PageProps) {
           <h2 class="uppercase text-blue text-2xl font-light mb-16">
             Мастер классы
           </h2>
-          <div class="grid grid-cols-2 gap-4 lg:gap-14">
+          <div class="grid lg:grid-cols-2 gap-x-4 gap-y-20 lg:gap-14">
             <div class="bg-fiolet relative pt-[127px] pb-[111px] px-4 md:px-12 isolate">
               <div class="grid gap-y-1 items-end content-end justify-start pb-6 pl-10 bg-white absolute w-[187px] h-[166px] rounded-[100%] -top-[69px] -right-[20px] text-gray-2 font-light text-xl text-center">
                 <span>Для детей</span>
@@ -432,15 +430,10 @@ export default function Home(ctx: PageProps) {
           <span class="text-xl font-light">
             Запись на мастер класс по телефону
           </span>
-          <a
-            href="tel:+74959121736"
-            class="text-2xl font-light mb-8 text-blue"
-          >
+          <a href="tel:+74959121736" class="text-2xl font-light mb-8 text-blue">
             +7 (495) 912-17-36
           </a>
-          <span class="text-xl font-light">
-            По вопросам сотрудничества
-          </span>
+          <span class="text-xl font-light">По вопросам сотрудничества</span>
           <span class="text-2xl font-light mb-12 text-blue">
             <a href="tel:+79296599574">+7 (929) 659-95-74</a> Кравцова Таисия
             Валерьевна
