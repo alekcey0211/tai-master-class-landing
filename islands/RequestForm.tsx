@@ -132,6 +132,12 @@ export default function RequestForm() {
           </span>
         </div>
       )}
+      {error && (
+        <div class="grid grid-cols-[auto_1fr] items-center mt-1">
+          <icons.Check class="w-[97px] h-[97px]" />
+          <span class="text-xl font-light">{error.message}</span>
+        </div>
+      )}
       {!success && (
         <button
           type="submit"
