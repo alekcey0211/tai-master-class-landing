@@ -31,6 +31,16 @@ export default function Home(ctx: PageProps) {
       width: 337,
       height: 464,
     },
+    {
+      href: "/image/0e421126a779ae024c0d266fea55ac6b.png",
+      width: 715,
+      height: 676,
+    },
+    {
+      href: "/image/71bdfacb1c4e3dfd9e6846354a136e35.png",
+      width: 721,
+      height: 961,
+    },
   ];
   const galleryChild = [
     {
@@ -66,16 +76,6 @@ export default function Home(ctx: PageProps) {
   ];
   const galleryAdult = [
     {
-      href: "/image/4ba44bf245df4857af2da952733a643c.jpg",
-      src: {
-        href: "/image/4ba44bf245df4857af2da952733a643c-src.jpg",
-        width: 816,
-        height: 812,
-      },
-      width: 408,
-      height: 406,
-    },
-    {
       href: "/image/640429f4aabf4571afa72052714d709b.jpg",
       src: {
         href: "/image/640429f4aabf4571afa72052714d709b-src.jpg",
@@ -86,14 +86,25 @@ export default function Home(ctx: PageProps) {
       height: 405,
     },
     {
-      href: "/image/dc5255db681f410a8f20d4969891dd50.jpg",
+      href: "/image/4ba44bf245df4857af2da952733a643c.jpg",
       src: {
-        href: "/image/dc5255db681f410a8f20d4969891dd50-src.jpg",
-        width: 768,
+        href: "/image/4ba44bf245df4857af2da952733a643c-src.jpg",
+        width: 816,
         height: 812,
       },
-      width: 384,
+      width: 408,
       height: 406,
+    },
+
+    {
+      href: "/image/d300297c85dbee2e8408da11687b54d5.jpg",
+      src: {
+        href: "/image/d300297c85dbee2e8408da11687b54d5-src.jpg",
+        width: 2016,
+        height: 1512,
+      },
+      width: 1008,
+      height: 756,
     },
   ];
 
@@ -121,7 +132,7 @@ export default function Home(ctx: PageProps) {
       <section class="h-[823px] relative overflow-hidden">
         <div class="absolute rounded-full bg-fiolet bg-opacity-25 w-[1283px] h-[1245px] -bottom-[86px] left-1/2 -translate-x-1/2 -z-20" />
         <div class="absolute rounded-full bg-fiolet w-[966px] h-[951px] bottom-0 left-1/2 -translate-x-1/2 -z-10" />
-        <div class="grid grid-cols-[405px_270px] justify-center">
+        <div class="grid grid-cols-[405px_270px] justify-center items-end">
           <div class="mx-auto grid gap-y-12 mt-[230px]">
             <div class="grid gap-y-6 text-[26px] leading-9 font-light text-gray-1">
               <span>Здравствуйте!</span>
@@ -141,6 +152,12 @@ export default function Home(ctx: PageProps) {
             </a>
           </div>
         </div>
+        <Image
+          src={"/image/768423c041056a4e453f4625498c7ad9.png"}
+          width={661}
+          height={1152}
+          className="block absolute bottom-0 left-1/2 h-[600px] w-auto"
+        />
       </section>
       <section id="work" class="bg-gray-6 py-16 overflow-hidden">
         <div class="container mb-16">
@@ -197,11 +214,11 @@ export default function Home(ctx: PageProps) {
           </div>
         </div>
       </section>
-      <section id="about" class="py-16 overflow-hidden h-[903px]">
+      <section id="about" class="py-16 overflow-hidden h-[1000px] lg:h-[903px]">
         <div class="relative container">
           <div class="absolute left-4 xl:left-40 2xl:left-[172px] -top-[33px] bg-fiolet bg-opacity-50 w-[1400px] h-[853px] rounded-[100%] -z-20" />
           <div class="absolute left-16 xl:left-52 2xl:left-[219px] top-[21px] bg-white w-[1085px] h-[640px] rounded-[100%] -z-10" />
-          <div class="max-w-[750px] absolute left-60 xl:left-[340px] right-0 top-[341px] -translate-y-1/2 grid gap-y-6 text-2xl font-light text-gray-2">
+          <div class="max-w-[600px] 2xl:max-w-[750px] absolute left-60 xl:left-[380px] right-0 top-[341px] -translate-y-1/2 grid gap-y-6 text-2xl font-light text-gray-2">
             <span>
               Меня зовут Таисия.
               <br />
@@ -217,6 +234,15 @@ export default function Home(ctx: PageProps) {
             <span>
               Буду рада помочь Вам сделать первые шаги в искусстве карвинга.
             </span>
+            <Image
+              src={"/image/231b23c912ebffe1e421135ad7e6373b.png"}
+              width={721}
+              height={961}
+              className="block absolute 
+              w-[300px] bottom-0 right-0 translate-y-full
+              lg:w-[600px] lg:bottom-auto lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-full lg:right-0
+              "
+            />
           </div>
         </div>
         <div class="container mb-[143px]">
@@ -236,12 +262,6 @@ export default function Home(ctx: PageProps) {
                 <span>Для детей</span>
                 <span>8-12 лет</span>
               </div>
-              <Image
-                src="/image/3a62e09c31a44e0392c02b96f2c3d86c.png"
-                width={300}
-                height={300}
-                className="absolute -bottom-[26px] -left-[156px] -z-10"
-              />
               <h3 class="text-blue text-[22px] leading-[30px] text-center mb-12">
                 Мастер-класс «Фруктовая композиция»
               </h3>
@@ -265,14 +285,21 @@ export default function Home(ctx: PageProps) {
                 Ребята будут работать с готовыми (уже нарезанными фруктами),
                 сладостями и элементами декора.
               </p>
-              <p class="mb-8 font-light text-base">
+              <p class="mb-8 font-light text-base text-center max-w-[376px] mx-auto">
                 <sup>*</sup>При наличии аллергии или противопоказаний на
                 какой-либо продукт просим предупредить организаторов.
                 Организаторы не несут ответственность за реакцию участников на
                 пищевые продукты.
               </p>
-              <p class="text-lg mb-4">Длительность мастер-класса 30-40 минут</p>
-              <p class="text-lg mb-20">Участие в мастер-классе БЕСПЛАТНОЕ</p>
+              <p class="text-xl mb-4 text-center text-blue font-light">
+                28 января в 14:30
+              </p>
+              <p class="text-lg mb-4 text-center">
+                Длительность мастер-класса 20 минут
+              </p>
+              <p class="text-lg mb-20 text-center">
+                Участие в мастер-классе БЕСПЛАТНОЕ
+              </p>
               <a
                 href="#form"
                 class="text-2xl bg-blue grid place-content-center h-[60px] w-[200px] text-white font-light mx-auto z-10"
@@ -285,12 +312,6 @@ export default function Home(ctx: PageProps) {
                 <span>Для взрослых</span>
                 <span>от 18 лет</span>
               </div>
-              <Image
-                src="/image/fbcef8b55cc54827aa92d7fd5af1b277.png"
-                width={250}
-                height={250}
-                className="absolute -bottom-[26px] -right-[106px] -z-10"
-              />
               <h3 class="text-blue text-[22px] leading-[30px] text-center mb-12">
                 Мастер-класс «Яблочко наливное»
               </h3>
@@ -312,14 +333,22 @@ export default function Home(ctx: PageProps) {
                 </li>
               </ul>
               <div class="flex-grow-1" />
-              <p class="mb-8 font-light text-base">
+              <p class="mb-8 font-light text-base text-center">
                 <sup>*</sup>При наличии аллергии или противопоказаний на
                 какой-либо продукт просим предупредить организаторов.
                 Организаторы не несут ответственность за реакцию участников на
                 пищевые продукты.
               </p>
-              <p class="text-lg mb-4">Длительность мастер-класса 30 минут</p>
-              <p class="text-lg mb-20">Участие в мастер-классе БЕСПЛАТНОЕ</p>
+              <div class="flex-grow-1" />
+              <p class="text-xl mb-4 text-center text-blue font-light">
+                28 января в 15:00
+              </p>
+              <p class="text-lg mb-4 text-center">
+                Длительность мастер-класса 30 минут
+              </p>
+              <p class="text-lg mb-20 text-center">
+                Участие в мастер-классе БЕСПЛАТНОЕ
+              </p>
               <a
                 href="#form"
                 class="text-2xl bg-blue grid place-content-center h-[60px] w-[200px] text-white font-light mx-auto"
@@ -337,7 +366,7 @@ export default function Home(ctx: PageProps) {
           </h2>
           <div
             id="gallery-c2e785305bb14c718691a9c265b65581"
-            class="flex flex-wrap justify-around gap-10 mb-16"
+            class="flex flex-wrap justify-center gap-10 mb-16"
           >
             {galleryChild.map((image) => (
               <a
@@ -346,7 +375,7 @@ export default function Home(ctx: PageProps) {
                 data-pswp-height={image.src.height}
                 target="_blank"
                 {...{ "aria-label": "open image in fullscreen view" }}
-                class="h-[406px]"
+                class="w-full lg:w-auto lg:h-[406px] 2xl:max-w-[calc(33%-40px)]"
               >
                 <Image
                   src={image.href}
@@ -363,7 +392,7 @@ export default function Home(ctx: PageProps) {
           </h2>
           <div
             id="gallery-9137448b7acb4cb7bbfddfe1e1965226"
-            class="flex flex-wrap justify-around gap-10 mb-16"
+            class="flex flex-wrap justify-center gap-10 mb-16"
           >
             {galleryAdult.map((image) => (
               <a
@@ -372,7 +401,7 @@ export default function Home(ctx: PageProps) {
                 data-pswp-height={image.src.height}
                 target="_blank"
                 {...{ "aria-label": "open image in fullscreen view" }}
-                class="h-[406px]"
+                class="w-full lg:w-auto lg:h-[406px] 2xl:max-w-[calc(33%-40px)]"
               >
                 <Image
                   src={image.href}
@@ -388,7 +417,7 @@ export default function Home(ctx: PageProps) {
       </section>
       <section id="form" class="py-16 overflow-hidden h-[903px]">
         <div class="relative container">
-          <div class="absolute left-4 xl:left-40 2xl:left-[172px] -top-[33px] bg-fiolet bg-opacity-50 w-[1400px] h-[853px] rounded-[100%] -z-20" />
+          <div class="absolute left-4 xl:left-40 2xl:left-[172px] -top-[33px] bg-fiolet w-[1400px] h-[853px] rounded-[100%] -z-20" />
           <div class="absolute left-16 xl:left-52 2xl:left-[219px] top-[21px] bg-white w-[1085px] h-[640px] rounded-[100%] -z-10" />
           <div class="flex justify-center absolute left-60 xl:left-[100px] right-0 top-[341px] -translate-y-1/2">
             <RequestForm />
@@ -398,22 +427,31 @@ export default function Home(ctx: PageProps) {
       <footer id="contacts" class="bg-gray-6 pt-16 pb-52">
         <div class="container grid !xl:px-32">
           <h2 class="text-blue text-2xl font-light underline mb-8">Контакты</h2>
-          <span class="text-2xl font-light mb-4">
-            По вопросам мастер классов и сотрудничества
+          <span class="text-xl font-light">
+            Запись на мастер класс по телефону
           </span>
-          <span class="text-2xl font-light mb-12">
-            <a href="tel:+79799656656">+7 979 965 66 56</a> Кравцова Таисия
+          <a
+            href="tel:+74959121736"
+            class="text-2xl font-light mb-8 text-blue"
+          >
+            +7 (495) 912-17-36
+          </a>
+          <span class="text-xl font-light">
+            По вопросам сотрудничества
+          </span>
+          <span class="text-2xl font-light mb-12 text-blue">
+            <a href="tel:+79296599574">+7 (929) 659-95-74</a> Кравцова Таисия
             Валерьевна
           </span>
           <div class="flex gap-3 text-blue">
             <a
-              href={`https://wa.me/+79799656656?text=""`}
+              href={`https://wa.me/+79296599574?text=""`}
               aria-label="Ссылка на приложение whatsapp"
             >
               <icons.Whatsapp />
             </a>
             <a
-              href="https://t.me/+79799656656"
+              href="https://t.me/+79296599574"
               aria-label="Ссылка на приложение telegram"
             >
               <icons.Telegram />

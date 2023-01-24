@@ -1,9 +1,12 @@
 import { useState } from "preact/hooks";
+import { icons } from "../components/icons.tsx";
+import { ErrorObject } from "../types/error.ts";
 
 export default function RequestForm() {
   const [agree, setAgree] = useState(false);
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [error, setError] = useState<ErrorObject>();
 
   return (
     <form
@@ -12,6 +15,8 @@ export default function RequestForm() {
         try {
           e.preventDefault();
           if (!agree) return;
+          setError(undefined);
+          setSuccess(false);
           setLoading(true);
           const form = e.currentTarget;
           const fd = new FormData(form);
@@ -19,13 +24,19 @@ export default function RequestForm() {
           const json = entries.reduce((acc, curr) => {
             return { ...acc, [curr[0]]: curr[1] };
           }, {});
-          const r = await fetch("/api/request", {
+          const response = await fetch("/api/request", {
             method: "POST",
             body: JSON.stringify(json),
           });
-          if (r.status === 200) {
+          const result = await response.json();
+          if (response.status === 200 && !result.ok) {
+            setError(result.error);
+            return;
+          }
+          if (response.status === 200 && result.ok) {
             setSuccess(true);
             form.reset();
+            return;
           }
         } catch (error) {
           console.error(error);
@@ -37,7 +48,7 @@ export default function RequestForm() {
         Заполните форму и приходите <br />
         на БЕСПЛАТНЫЙ мастер класс
       </h2>
-      <div class="grid gap-7 -ml-[108px] mb-10">
+      <div class="grid gap-7 -ml-[108px]">
         <label class="grid gap-2 grid-cols-[100px_1fr] items-center">
           <span class="text-lg text-blue-2 place-self-end">Имя</span>
           <input
@@ -57,6 +68,7 @@ export default function RequestForm() {
         <div class="grid gap-2 pl-[108px]">
           <label class="flex gap-2 items-center">
             <input
+              required
               type="radio"
               value="Мастер-класс «Яблочко наливное»"
               name="type"
@@ -110,13 +122,25 @@ export default function RequestForm() {
           </span>
         </label>
       </div>
-      <button
-        type="submit"
-        disabled={!agree || loading}
-        class="text-2xl bg-blue grid place-content-center h-[60px] w-[200px] text-white font-light mx-auto disabled:bg-opacity-50"
-      >
-        {loading ? "Отправка..." : "Записаться"}
-      </button>
+      {success && (
+        <div class="text-blue grid grid-cols-[auto_1fr] items-center mt-1">
+          <icons.Check class="w-[97px] h-[97px]" />
+          <span class="text-xl font-light">
+            Поздравляем!
+            <br />
+            Вы записаны на мастер класс
+          </span>
+        </div>
+      )}
+      {!success && (
+        <button
+          type="submit"
+          disabled={loading}
+          class="text-2xl bg-blue grid place-content-center h-[60px] w-[200px] text-white font-light mx-auto mt-10"
+        >
+          {loading ? "Отправка..." : "Записаться"}
+        </button>
+      )}
     </form>
   );
 }

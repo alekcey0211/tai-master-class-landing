@@ -42,6 +42,7 @@ const Telegram = (props: JSX.SVGAttributes<SVGSVGElement>) => {
     </svg>
   );
 };
+
 const Whatsapp = (props: JSX.SVGAttributes<SVGSVGElement>) => {
   return (
     <svg width="30" height="30" fill="none" {...props}>
@@ -59,9 +60,23 @@ const Whatsapp = (props: JSX.SVGAttributes<SVGSVGElement>) => {
   );
 };
 
+const Check = (props: JSX.SVGAttributes<SVGSVGElement>) => {
+  return (
+    <svg width="97" height="97" viewBox="0 0 97 97" fill="none" {...props}>
+      <path
+        fill="currentColor"
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M72.9 32.2a3 3 0 0 1 0 4.3L44.6 64.8a3 3 0 0 1-4.3 0L24 48.6a3 3 0 1 1 4.3-4.3l14 14 26.2-26a3 3 0 0 1 4.3 0Z"
+      />
+    </svg>
+  );
+};
+
 export const icons = {
   ArrowRight,
   ArrowUp,
   Telegram,
   Whatsapp,
+  Check
 };

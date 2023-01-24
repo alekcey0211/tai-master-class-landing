@@ -137,6 +137,7 @@ export default {
       "outline-color": theme("colors", "red") + "!important",
     };
     cssRule[":root"] = css("scroll-smooth");
+    cssRule[".swiper-slide-active > div"] = css("bg-fiolet");
     // cssRule["body"] = css("bg-gray-6 text-gray-2");
   },
 } as Configuration;

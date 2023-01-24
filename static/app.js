@@ -62,6 +62,7 @@ const swiper = new Swiper("#swiper-71e5983e0ce24d2aa0a941ba82f4c3f3", {
     nextEl: "#swiper-71e5983e0ce24d2aa0a941ba82f4c3f3-button-next",
     prevEl: "#swiper-71e5983e0ce24d2aa0a941ba82f4c3f3-button-prev",
   },
+  centeredSlides: true
 });
 swiper.on("click", (swiper) => {
   /** @type HTMLDivElement */

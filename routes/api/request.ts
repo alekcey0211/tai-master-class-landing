@@ -16,8 +16,8 @@ export const handler = async (_req: Request, _ctx: HandlerContext) => {
     const newRequest = (await _req.json()) as DbRequest;
 
     const { private_key } = await getJson("key.json");
-
     const spreadSheetId = "1DSI7mx-L5pEVEejqPyY2Ui8QPl-J6uoIQQQtSaec2u4";
+
     const auth = new google.GoogleAuth();
     const client = auth.fromJSON({
       type: Deno.env.get("type"),
@@ -27,22 +27,41 @@ export const handler = async (_req: Request, _ctx: HandlerContext) => {
       client_email: Deno.env.get("client_email"),
       client_id: Deno.env.get("client_id"),
     });
+
     const sheets = new google.Sheets(client);
+
+    const { values } = await sheets.spreadsheetsValuesGet(
+      "Настройки!B1:B1",
+      spreadSheetId
+    );
+    const isFormEnable = !values || values?.[0][0] === "TRUE";
+    if (!isFormEnable) {
+      return new Response(
+        JSON.stringify({
+          ok: false,
+          error: { code: "out_of_seats", message: "Закончились места" },
+        }),
+        {
+          status: 200,
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+    }
+
+    const newRequestValues = Object.values(newRequest);
+    newRequestValues[5] = new Date(Date.now()).toLocaleDateString();
     await sheets.spreadsheetsValuesAppend(
       "Заявки!A:F",
       spreadSheetId,
       {
-        values: [
-          [
-            ...Object.values(newRequest),
-            new Date(Date.now()).toLocaleDateString(),
-          ],
-        ],
+        values: [newRequestValues],
       },
       { valueInputOption: "USER_ENTERED" }
     );
 
-    return new Response(null, {
+    return new Response(JSON.stringify({ ok: true }), {
       status: 200,
       headers: {
         "Content-Type": "application/json",
