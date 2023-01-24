@@ -157,6 +157,7 @@ export default function Home(ctx: PageProps) {
           width={661}
           height={1152}
           className="block absolute bottom-0 left-1/2 h-[600px] w-auto"
+          isLazy={false}
         />
       </section>
       <section id="work" class="bg-gray-6 py-16 overflow-hidden">
@@ -359,15 +360,16 @@ export default function Home(ctx: PageProps) {
           </div>
         </div>
       </section>
-      <section id="photo" class="bg-gray-6 pt-20 pb-12">
+      <section id="photo" class="bg-gray-6 pt-20 pb-12 overflow-hidden">
         <div class="container">
           <h2 class="uppercase text-blue text-2xl font-light mb-16 xl:ml-32">
             Мастер класс для детей
           </h2>
           <div
             id="gallery-c2e785305bb14c718691a9c265b65581"
-            class="flex flex-wrap justify-center gap-10 mb-16"
+            class="flex flex-wrap justify-around gap-10 mb-16 relative isolate"
           >
+            <div class="absolute top-0 -bottom-8 -left-[9999px] -right-[9999px] bg-fiolet -z-10" />
             {galleryChild.map((image) => (
               <a
                 href={image.src.href}
@@ -392,7 +394,7 @@ export default function Home(ctx: PageProps) {
           </h2>
           <div
             id="gallery-9137448b7acb4cb7bbfddfe1e1965226"
-            class="flex flex-wrap justify-center gap-10 mb-16"
+            class="flex flex-wrap justify-around gap-10 mb-16"
           >
             {galleryAdult.map((image) => (
               <a
