@@ -32,12 +32,12 @@ export default function ScrollToTop() {
       <button
         type="button"
         onClick={scrollToTop}
-        class="inline-flex items-center bg-blue bg-opacity-80 hover:bg-opacity-90 active:bg-opacity-95 rounded-full p-3 text-white shadow-sm"
+        class="w-16 h-16 grid place-content-center bg-blue bg-opacity-80 hover:bg-opacity-90 active:bg-opacity-95 rounded-full p-3 text-white shadow-sm"
         {...{
           "aria-label": "scroll to top",
         }}
       >
-        <icons.ArrowUp aria-hidden="true" />
+        <icons.ArrowUp aria-hidden="true" class="w-8 h-8" />
       </button>
     </div>
   );

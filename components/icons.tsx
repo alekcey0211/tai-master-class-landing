@@ -32,7 +32,7 @@ const ArrowUp = (props: JSX.SVGAttributes<SVGSVGElement>) => {
 
 const Telegram = (props: JSX.SVGAttributes<SVGSVGElement>) => {
   return (
-    <svg width="30" height="30" fill="none">
+    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" {...props}>
       <path
         fill="currentColor"
         fill-rule="evenodd"
@@ -45,7 +45,7 @@ const Telegram = (props: JSX.SVGAttributes<SVGSVGElement>) => {
 
 const Whatsapp = (props: JSX.SVGAttributes<SVGSVGElement>) => {
   return (
-    <svg width="30" height="30" fill="none" {...props}>
+    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" {...props}>
       <path
         fill="currentColor"
         d="M11.1 8.96c.24 0 .49.02.73.56a66.44 66.44 0 0 1 1 2.37c.08.16.13.35.02.56l-.03.08c-.09.17-.15.3-.29.46a10.94 10.94 0 0 0-.48.56c-.16.16-.33.33-.15.65a9.6 9.6 0 0 0 1.8 2.22c1.03.92 1.92 1.3 2.38 1.5l.2.1c.33.16.52.13.7-.08.2-.22.81-.94 1.03-1.26.2-.32.42-.27.72-.16.3.11 1.88.89 2.2 1.05l.18.08c.22.11.38.18.44.3.08.13.08.77-.18 1.52-.28.75-1.59 1.47-2.18 1.52l-.17.02c-.54.07-1.24.15-3.7-.82C12.3 19 10.3 16.04 9.9 15.45l-.07-.1c-.19-.25-1.32-1.76-1.32-3.32 0-1.48.74-2.26 1.07-2.61l.06-.06c.3-.32.64-.4.86-.4h.62Z"
