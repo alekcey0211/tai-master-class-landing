@@ -40,9 +40,6 @@ export const IndexMasterClasses = () => {
               не несут ответственность за реакцию участников на пищевые
               продукты.
             </p>
-            <p class="text-xl mb-4 text-center text-blue font-light">
-              28 января в 14:30
-            </p>
             <p class="text-lg mb-4 text-center">
               Длительность мастер-класса 20 минут
             </p>
@@ -89,9 +86,6 @@ export const IndexMasterClasses = () => {
               продукты.
             </p>
             <div class="flex-grow-1" />
-            <p class="text-xl mb-4 text-center text-blue font-light">
-              28 января в 15:00
-            </p>
             <p class="text-lg mb-4 text-center">
               Длительность мастер-класса 30 минут
             </p>
